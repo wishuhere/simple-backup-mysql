@@ -8,7 +8,8 @@ DATABASES=`/usr/bin/mysql -uroot -p${PASS} -e "show databases;" | grep -v "Datab
 
 check_backupdir() {
  if [[ ! -f $BACKUP_DIR ]]; then
-     sudo mkdir -p $BACKUP_DIR && cd $BACKUP_DIR && sudo mkdir ${DATE}
+     #sudo mkdir -p $BACKUP_DIR && cd $BACKUP_DIR && sudo mkdir ${DATE}
+     sudo mkdir -p $BACKUP_DIR/${DATE}
      if [ "$?" = "0" ]; then
          :
      else
